@@ -33,3 +33,18 @@ resource "aws_subnet" "first-vpc-sub" {
         name = "vpc1-sub"
     }
 }
+
+resource "aws_vpc" "second-vpc" {
+    cidr_block = "10.1.0.0/16"
+    tags = {
+        name = "vpc2"
+    }
+}
+
+resource "aws_subnet" "second-vpc-sub" {
+    vpc_id = aws_vpc.first-vpc.vpc_id
+    cidr_black = "10.1.1.0/24"
+    tags = {
+        name = "vpc2-sub"
+    }
+}
