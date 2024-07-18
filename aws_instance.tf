@@ -13,3 +13,15 @@ resource "aws_instance" "first-server" {
         name = "ubuntu_server"
     }
 }
+# resourse "<provider>_<resourceType>" "name" {
+#     config options...
+#     key = key_value
+#     key2 = value
+# }
+
+resource "aws_vpc" "first-vpc" {
+    cidr_block = "10.0.0.0/16"
+    tags = {
+        name = "vpc1"
+    }
+}
