@@ -25,3 +25,11 @@ resource "aws_vpc" "first-vpc" {
         name = "vpc1"
     }
 }
+
+resource "aws_subnet" "first-vpc-sub" {
+    vpc_id = aws_vpc.first-vpc.vpc_id
+    cidr_black = "10.0.1.0/24"
+    tags = {
+        name = "vpc1-sub"
+    }
+}
